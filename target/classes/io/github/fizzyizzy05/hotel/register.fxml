@@ -56,7 +56,7 @@
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="emailRepeat" promptText="Confirm email" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="emailConfirm" promptText="Confirm email" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <PasswordField fx:id="passIn" promptText="Password" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <PasswordField fx:id="passConfirm" promptText="Confirm password" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField fx:id="phoneIn" promptText="Phone number" GridPane.columnIndex="2" GridPane.rowIndex="3" />
