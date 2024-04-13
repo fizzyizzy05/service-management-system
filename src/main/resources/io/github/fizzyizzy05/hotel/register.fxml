@@ -75,7 +75,7 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </HBox>
-      <Button mnemonicParsing="false" text="Create account">
+      <Button mnemonicParsing="false" onAction="#register" text="Create account">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
