@@ -8,9 +8,7 @@ import javafx.application.Application;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
+// The App Class handles opening the booking system window. Most application code occurs in the controller files.
 public class App extends Application {
 
     private static Scene scene;

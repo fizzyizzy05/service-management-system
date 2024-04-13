@@ -1,5 +1,1 @@
 target/hotel-1.0-SNAPSHOT.jar
-target/classes/module-info.class
-target/classes/io/github/fizzyizzy05/hotel/App.class
-target/classes/io/github/fizzyizzy05/hotel/PrimaryController.class
-target/classes/io/github/fizzyizzy05/hotel/SecondaryController.class
