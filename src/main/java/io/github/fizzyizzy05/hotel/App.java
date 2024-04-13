@@ -15,7 +15,7 @@ public class App extends Application {
 
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 800, 640);
+        scene = new Scene(loadFXML("login"), 800, 640);
         stage.setTitle("Hotel Booking System");
         stage.setScene(scene);
         stage.show();

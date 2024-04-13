@@ -1,12 +1,12 @@
 package io.github.fizzyizzy05.hotel;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
+import java.io.IOException;
 
-public class PrimaryController {
+public class LoginController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+        // App.setRoot("secondary");
     }
 }
