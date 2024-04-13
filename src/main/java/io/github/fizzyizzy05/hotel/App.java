@@ -3,10 +3,9 @@ package io.github.fizzyizzy05.hotel;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
+import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.application.Application;
-
-import java.io.IOException;
 
 // The App Class handles opening the booking system window. Most application code occurs in the controller files.
 public class App extends Application {
