@@ -81,6 +81,6 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Button>
-      <Hyperlink text="Go Back" />
+      <Hyperlink onAction="#goLogin" text="Go Back" />
    </children>
 </VBox>
