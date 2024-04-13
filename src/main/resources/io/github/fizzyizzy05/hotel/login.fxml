@@ -34,8 +34,8 @@
       </VBox>
       <GridPane maxWidth="400.0" prefWidth="400.0" VBox.vgrow="NEVER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="10.0" prefWidth="74.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="745.0" minWidth="10.0" prefWidth="326.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="10.0" prefWidth="68.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="745.0" minWidth="10.0" prefWidth="332.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints />
@@ -44,7 +44,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Username" GridPane.rowIndex="1" />
+            <Label text="Email" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Password" GridPane.rowIndex="2" />
             <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="2">
