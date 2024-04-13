@@ -7,6 +7,6 @@ public class RegisterController {
 
     @FXML
     private void register() throws IOException {
-        System.out.println("Registering...");
+        System.out.println("Registering");
     }
 }
