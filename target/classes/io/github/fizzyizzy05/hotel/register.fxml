@@ -49,8 +49,8 @@
                   <Font name="System Italic" size="11.0" />
                </font>
             </Label>
-            <TextField promptText="First name" GridPane.columnIndex="2" />
-            <TextField promptText="Last name" GridPane.columnIndex="3" />
+            <TextField fx:id="firstNameIn" promptText="First name" GridPane.columnIndex="2" />
+            <TextField fx:id="lastNameIn" promptText="Last name" GridPane.columnIndex="3" />
             <TextField prefWidth="208.0" promptText="Email" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />

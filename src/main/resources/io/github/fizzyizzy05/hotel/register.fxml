@@ -49,18 +49,18 @@
                   <Font name="System Italic" size="11.0" />
                </font>
             </Label>
-            <TextField promptText="First name" GridPane.columnIndex="2" />
-            <TextField promptText="Last name" GridPane.columnIndex="3" />
-            <TextField prefWidth="208.0" promptText="Email" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <TextField fx:id="firstNameIn" promptText="First name" GridPane.columnIndex="2" />
+            <TextField fx:id="lastNameIn" promptText="Last name" GridPane.columnIndex="3" />
+            <TextField fx:id="emailIn" prefWidth="208.0" promptText="Email" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Confirm email" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <PasswordField promptText="Password" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <PasswordField promptText="Confirm password" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <TextField promptText="Phone number" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField promptText="Confirm Phone Number" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="emailRepeat" promptText="Confirm email" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passIn" promptText="Password" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <PasswordField fx:id="passConfirm" promptText="Confirm password" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="phoneIn" promptText="Phone number" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="phoneConfirm" promptText="Confirm Phone Number" GridPane.columnIndex="3" GridPane.rowIndex="3" />
          </children>
          <padding>
             <Insets bottom="10.0" />
