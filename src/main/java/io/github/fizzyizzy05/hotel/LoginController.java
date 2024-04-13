@@ -9,4 +9,9 @@ public class LoginController {
     private void login() throws IOException {
         System.out.println("Logging in!");
     }
+
+    @FXML
+    private void goRegister() throws IOException {
+        App.setRoot("register");
+    }
 }

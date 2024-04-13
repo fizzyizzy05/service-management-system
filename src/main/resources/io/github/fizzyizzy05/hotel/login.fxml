@@ -69,7 +69,7 @@
       <HBox alignment="CENTER" VBox.vgrow="NEVER">
          <children>
             <Label text="Not a member of the hotel?" />
-            <Hyperlink text="Register" />
+            <Hyperlink onAction="#goRegister" text="Register" />
          </children>
       </HBox>
    </children>
