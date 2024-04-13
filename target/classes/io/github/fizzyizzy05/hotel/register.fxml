@@ -68,7 +68,7 @@
       </GridPane>
       <HBox alignment="CENTER" prefWidth="200.0">
          <children>
-            <CheckBox mnemonicParsing="false" text="I agree to the" />
+            <CheckBox fx:id="agreeTC" mnemonicParsing="false" text="I agree to the" />
             <Hyperlink text="terms and conditions" />
          </children>
          <VBox.margin>

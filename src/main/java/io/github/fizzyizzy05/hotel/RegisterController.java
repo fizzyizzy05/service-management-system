@@ -3,6 +3,7 @@ package io.github.fizzyizzy05.hotel;
 import javafx.fxml.FXML;
 import java.io.IOException;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert.AlertType;
@@ -17,6 +18,7 @@ public class RegisterController {
     @FXML private TextField phoneConfirm;
     @FXML private PasswordField passIn;
     @FXML private PasswordField passConfirm;
+    @FXML private CheckBox agreeTC;
 
     @FXML private void register() throws IOException {
         if(firstNameIn.getText().equals("") || lastNameIn.getText().equals("") || emailIn.getText().equals("") || passIn.getText().equals("")) {
@@ -40,6 +42,11 @@ public class RegisterController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Form error");
             alert.setContentText("Please double check you have entered your phone number correctly.");
+            alert.showAndWait();
+        } else if (!agreeTC.isSelected()) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Form error");
+            alert.setContentText("You need to agree to the terms and conditions");
             alert.showAndWait();
         }
     }
