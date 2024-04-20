@@ -30,9 +30,26 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    // This is the main functionality that runs the 
+    // This is the main functionality that starts the booking system.
     public static void main(String[] args) throws SQLException {
+        Statement stmt = null;
         Connection dbConnection = getConnection();
+        // Using the "IF NOT E"
+        String[] sql = {"CREATE TABLE IF NOT EXISTS Users " + 
+                               "(ID INT NOT NULL, " + 
+                               "firstName TEXT NOT NULL, " + 
+                               "lastName TEXT NOT NULL, " + 
+                               "password TEXT NOT NULL, " +
+                               "email TEXT NOT NULL, " + 
+                               "phoneNo INT(11), " +
+                               "ROLE INT NOT NULL," + 
+                               "PRIMARY KEY (ID));",
+        };
+        stmt = dbConnection.createStatement();
+        for (String s : sql) {
+            stmt.executeUpdate(s);
+        }
+        stmt.close();
         launch();
     }
 
