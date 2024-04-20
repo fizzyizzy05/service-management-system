@@ -1,5 +1,6 @@
 package io.github.fizzyizzy05.hotel;
 
+import java.sql.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -29,8 +30,13 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
+    // This is the main functionality that runs the 
+    public static void main(String[] args) throws SQLException {
+        Connection dbConnection = getConnection();
         launch();
     }
 
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection("jdbc:sqlite:hotel-database.db");
+    }
 }
