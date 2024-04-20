@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.fizzyizzy05.hotel.RegisterController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.fizzyizzy05.hotel.RegisterController">
    <children>
       <Label text="Register">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Label text="Create an account on the hotel booking system">
+      <Label text="Create an account on the service management system">
          <padding>
             <Insets bottom="10.0" />
          </padding>
