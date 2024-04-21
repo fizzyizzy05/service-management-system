@@ -14,6 +14,7 @@ public class App extends Application {
     private static Scene scene;
 
     @Override
+    // Declare a function to open the window, used in App.main()
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
         scene = new Scene(loadFXML("login"), 800, 640);
         stage.setTitle("Service Management System");
@@ -21,6 +22,7 @@ public class App extends Application {
         stage.show();
     }
 
+    // Use a function so that we can set the window root from anywhere
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
