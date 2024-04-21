@@ -6,16 +6,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "io.github.fizzyizzy05.hotel/io.github.fizzyizzy05.hotel.App",
             "projectName": "hotel"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
         }
     ]
 }
