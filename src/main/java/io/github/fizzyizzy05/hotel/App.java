@@ -36,7 +36,7 @@ public class App extends Application {
     public static void main(String[] args) throws SQLException {
         Statement stmt = null;
         Connection dbConnection = getConnection();
-        // Using the "IF NOT EXISTS" command in SQL to create a new table if it doesn't exist, allowing for seamless initialisation of the database.
+        // Using the "IF NOT EXISTS" command in SQL to create a new table if it doesn't exist, allowing for seamless initialisation of the database. 
         String[] sql = {"CREATE TABLE IF NOT EXISTS Users " + 
                                "(ID INT NOT NULL, " + 
                                "firstName TEXT NOT NULL, " + 
@@ -44,7 +44,7 @@ public class App extends Application {
                                "password TEXT NOT NULL, " +
                                "email TEXT NOT NULL, " + 
                                "phoneNo INT(11), " +
-                               "ROLE INT NOT NULL," + 
+                               "staff BOOL NOT NULL," + 
                                "PRIMARY KEY (ID));",
         };
         stmt = dbConnection.createStatement();
