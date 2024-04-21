@@ -38,14 +38,16 @@ public class App extends Application {
         Connection dbConnection = getConnection();
         // Using the "IF NOT EXISTS" command in SQL to create a new table if it doesn't exist, allowing for seamless initialisation of the database. 
         String[] sql = {"CREATE TABLE IF NOT EXISTS Users " + 
-                               "(ID INT NOT NULL, " + 
-                               "firstName TEXT NOT NULL, " + 
-                               "lastName TEXT NOT NULL, " + 
-                               "password TEXT NOT NULL, " +
-                               "email TEXT NOT NULL, " + 
-                               "phoneNo INT(11), " +
-                               "staff BOOL NOT NULL," + 
-                               "PRIMARY KEY (ID));",
+                                "(ID INT NOT NULL, " + 
+                                "firstName TEXT NOT NULL, " + 
+                                "lastName TEXT NOT NULL, " + 
+                                "password TEXT NOT NULL, " +
+                                "email TEXT NOT NULL, " + 
+                                "phoneNo INT(11), " +
+                                "staff BOOL NOT NULL," + 
+                                "PRIMARY KEY (ID));",
+                            "INSERT OR IGNORE INTO Users (ID, firstName, lastName, password, email, phoneNo, staff) " + 
+                                "VALUES ('0', 'First Name', 'Last Name', 'admin', 'admin@localhost', '07123456789', 'true');",
         };
         stmt = dbConnection.createStatement();
         for (String s : sql) {
