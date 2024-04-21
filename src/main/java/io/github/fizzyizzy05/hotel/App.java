@@ -8,7 +8,7 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.application.Application;
 
-// The App Class handles opening the booking system window. Most application code occurs in the controller files.
+// The App Class handles opening the booking system window. Most application code occurs in the controller files for each page.
 public class App extends Application {
 
     private static Scene scene;
@@ -30,11 +30,11 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    // This is the main functionality that starts the booking system.
+    // This is the main functionality that starts the system.
     public static void main(String[] args) throws SQLException {
         Statement stmt = null;
         Connection dbConnection = getConnection();
-        // Using the "IF NOT E"
+        // Using the "IF NOT EXISTS" command in SQL to create a new table if it doesn't exist, allowing for seamless initialisation of the database.
         String[] sql = {"CREATE TABLE IF NOT EXISTS Users " + 
                                "(ID INT NOT NULL, " + 
                                "firstName TEXT NOT NULL, " + 
@@ -53,6 +53,7 @@ public class App extends Application {
         launch();
     }
 
+    // We use a common function for connecting to the database in order to ensure that we always use the same database.
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:sqlite:hotel-database.db");
     }
