@@ -9,7 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert.AlertType;
 
 public class RegisterController {
-
+    // Import the widgets used in the fxml file
     @FXML private TextField firstNameIn;
     @FXML private TextField lastNameIn;
     @FXML private TextField emailIn;
@@ -20,7 +20,9 @@ public class RegisterController {
     @FXML private PasswordField passConfirm;
     @FXML private CheckBox agreeTC;
 
+    // Create a new user account
     @FXML private void register() throws IOException {
+        // Long conditional used to ensure the form is properly filled out
         if(firstNameIn.getText().equals("") || lastNameIn.getText().equals("") || emailIn.getText().equals("") || passIn.getText().equals("")) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Form error");
@@ -51,6 +53,7 @@ public class RegisterController {
         }
     }
 
+    // Go back to the login screen
     @FXML private void goLogin() throws IOException{
         App.setRoot("login");
     }
