@@ -46,8 +46,21 @@ public class App extends Application {
                                 "phoneNo INT(11), " +
                                 "staff BOOL NOT NULL," + 
                                 "PRIMARY KEY (ID));",
-                            "INSERT OR IGNORE INTO Users (ID, firstName, lastName, password, email, phoneNo, staff) " + 
+                        "INSERT OR IGNORE INTO Users (ID, firstName, lastName, password, email, phoneNo, staff) " + 
                                 "VALUES ('0', 'First Name', 'Last Name', 'admin', 'admin@localhost', '07123456789', 'true');",
+                        "CREATE TABLE IF NOT EXISTS Services " + 
+                                "(ID INT NOT NULL, " + 
+                                "name TEXT NOT NULL, " +
+                                "hourlyRate INT NOT NULL, " + 
+                                "PRIMARY KEY (ID));",
+                        "CREATE TABLE IF NOT EXISTS Appointments " + 
+                                "(ID INT NOT NULL, " +
+                                "title TEXT NOT NULL, " + 
+                                "desc TEXT, " + 
+                                "service INT NOT NULL, " +
+                                "time DATETIME NOT NULL, " + 
+                                "FOREIGN KEY (service) REFERENCES Services(ID) " +
+                                "PRIMARY KEY (ID));"
         };
         stmt = dbConnection.createStatement();
         for (String s : sql) {
