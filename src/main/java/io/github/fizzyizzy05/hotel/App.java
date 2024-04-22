@@ -59,6 +59,8 @@ public class App extends Application {
                                 "desc TEXT, " + 
                                 "service INT NOT NULL, " +
                                 "time DATETIME NOT NULL, " + 
+                                "customer INT NOT NULL, " + 
+                                "FOREIGN KEY (customer) REFERENCES Users(ID) " +
                                 "FOREIGN KEY (service) REFERENCES Services(ID) " +
                                 "PRIMARY KEY (ID));"
         };
