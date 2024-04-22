@@ -15,7 +15,8 @@ public class LoginController {
     @FXML
     private void login() throws IOException, SQLException {
         Connection dbConnection = App.getConnection();
-        ResultSet accDetails = dbConnection.createStatement().executeQuery("SELECT password, firstName, lastName, ID FROM Users WHERE email = '" + emailIn.getText() + "';");
+        Statement stmt = dbConnection.createStatement();
+        ResultSet accDetails = stmt.executeQuery("SELECT password, firstName, lastName, ID FROM Users WHERE email = '" + emailIn.getText() + "';");
         if (passIn.getText().equals(accDetails.getString("password"))) {
             App.getAccountManager().login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"));
             dbConnection.close();
