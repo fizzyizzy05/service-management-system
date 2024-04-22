@@ -73,6 +73,7 @@ public class App extends Application {
     }
 
     // We use a common function for connecting to the database in order to ensure that we always use the same database.
+    @SuppressWarnings("exports")
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:sqlite:hotel-database.db");
     }
