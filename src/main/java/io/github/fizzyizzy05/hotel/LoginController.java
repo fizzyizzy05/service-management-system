@@ -18,7 +18,6 @@ public class LoginController {
         ResultSet accDetails = dbConnection.createStatement().executeQuery("SELECT password FROM Users WHERE email = '" + emailIn.getText() + "';");
         if (passIn.getText().equals(accDetails.getString("password"))) {
             App.setRoot("admin");
-            AdminController.refresh();
         } else if (accDetails.getString("password") == null) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Login error");
