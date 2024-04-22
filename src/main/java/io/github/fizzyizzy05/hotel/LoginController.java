@@ -23,7 +23,12 @@ public class LoginController {
             alert.setTitle("Login error");
             alert.setContentText("No account with this username was found. Please try again, or register a new account.");
             alert.showAndWait();
-        } 
+        } else {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Login error");
+            alert.setContentText("This password is incorrect. Please try again.");
+            alert.showAndWait();
+        }
     }
 
     // Change the screen to register
