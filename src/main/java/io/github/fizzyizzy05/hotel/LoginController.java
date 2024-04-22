@@ -22,7 +22,11 @@ public class LoginController {
             accountManager.login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"));
             stmt.close();
             dbConnection.close();
-            App.setRoot("admin");
+            if (accountManager.getEmail().equals("admin@localhost") && accountManager.getPassword().equals("admin")) {
+                App.setRoot("admin-password-change");
+            } else {
+                App.setRoot("admin");
+            }
         } else if (accDetails.getString("password") == null) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Login error");

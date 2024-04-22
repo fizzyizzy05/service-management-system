@@ -12,9 +12,6 @@ public class AdminController {
     AccountManager accountManager = App.getAccountManager();
 
     @FXML public void refresh() throws IOException {
-        if (accountManager.getEmail().equals("admin@localhost") && accountManager.getPassword().equals("admin")) {
-            App.setRoot("admin-password-change");
-        }
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
     }
 
