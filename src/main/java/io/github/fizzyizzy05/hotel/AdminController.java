@@ -3,7 +3,6 @@ package io.github.fizzyizzy05.hotel;
 import java.sql.*;
 import javafx.fxml.FXML;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import javafx.scene.control.Label;
 
