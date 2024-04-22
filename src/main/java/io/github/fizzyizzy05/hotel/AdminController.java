@@ -19,4 +19,8 @@ public class AdminController {
         accountManager.logout();
         App.setRoot("login");
     }
+
+    @FXML public void changePasswordFromDefault() {
+
+    }
 }
