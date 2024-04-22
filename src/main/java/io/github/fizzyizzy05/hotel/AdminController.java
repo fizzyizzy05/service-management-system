@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 
 public class AdminController {
-    @FXML private void refresh() throws IOException {
-
+    private String loggedInUser;
+    
+    @FXML public static void refresh() throws IOException {
+        System.out.println("Refreshing..");
     }
+
 }
