@@ -12,6 +12,7 @@ import javafx.application.Application;
 public class App extends Application {
 
     private static Scene scene;
+    private static AccountManager accountManager = new AccountManager();
 
     @Override
     // Declare a function to open the window, used in App.main()
@@ -76,5 +77,9 @@ public class App extends Application {
     @SuppressWarnings("exports")
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:sqlite:hotel-database.db");
+    }
+
+    public static AccountManager getAccountManager() {
+        return accountManager;
     }
 }
