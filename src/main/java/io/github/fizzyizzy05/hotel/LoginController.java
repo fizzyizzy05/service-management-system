@@ -18,7 +18,12 @@ public class LoginController {
         ResultSet accDetails = dbConnection.createStatement().executeQuery("SELECT password FROM Users WHERE email = '" + emailIn.getText() + "';");
         if (passIn.getText().equals(accDetails.getString("password"))) {
             System.out.println("Logging in");
-        }
+        } else if (accDetails.getString("password") == null) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Login error");
+            alert.setContentText("No account with this username was found. Please try again, or register a new account.");
+            alert.showAndWait();
+        } 
     }
 
     // Change the screen to register
