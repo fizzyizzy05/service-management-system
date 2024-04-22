@@ -15,4 +15,13 @@ public class AccountManager {
         this.lastName = lastName;
         this.accountID = accountID;
     }
+
+    public String[] getNames() {
+        String[] names = {this.firstName, this.lastName};
+        return names;
+    }
+    
+    public String getEmail() {
+        return this.email;
+    }
 }
