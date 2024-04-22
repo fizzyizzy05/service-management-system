@@ -37,4 +37,8 @@ public class AccountManager {
         this.lastName = null;
         this.accountID = -1;
     }
+
+    public String getPassword() {
+        return this.password;
+    }
 }
