@@ -6,14 +6,16 @@ public class AccountManager {
     private String firstName;
     private String lastName;
     private int accountID = -1;
+    private String password;
     
     public AccountManager() {}
 
-    public void login(String email, String firstName, String lastName, int accountID) {
+    public void login(String email, String firstName, String lastName, int accountID, String password) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.accountID = accountID;
+        this.password = password;
     }
 
     public String[] getNames() {
