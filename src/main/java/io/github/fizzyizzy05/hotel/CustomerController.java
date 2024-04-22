@@ -19,4 +19,8 @@ public class CustomerController {
         accountManager.logout();
         App.setRoot("login");
     }
+
+    public void initialize() throws IOException {
+        refresh();
+    }
 }

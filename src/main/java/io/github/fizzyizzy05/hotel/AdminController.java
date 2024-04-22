@@ -23,4 +23,7 @@ public class AdminController {
         App.setRoot("login");
     }
 
+    public void initialize() throws IOException {
+        refresh();
+    }
 }
