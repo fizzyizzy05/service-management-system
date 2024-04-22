@@ -17,6 +17,7 @@ public class changeDefaultPassController {
         stmt.executeUpdate("UPDATE Users SET password = '" + newPassIn.getText() + "' WHERE email = '" + App.getAccountManager().getEmail() + "';");
         stmt.close();
         dbConnection.close();
+        App.getAccountManager().updateInfo();
         App.setRoot("admin");
     }
 }
