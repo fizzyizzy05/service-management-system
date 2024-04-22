@@ -56,5 +56,7 @@ public class AccountManager {
         this.firstName = accountDetails.getString("firstName");
         this.lastName = accountDetails.getString("lastName");
         this.accountID = accountDetails.getInt("ID");
+        stmt.close();
+        dbConnection.close();
     }
 }
