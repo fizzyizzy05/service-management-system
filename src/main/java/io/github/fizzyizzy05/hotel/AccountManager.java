@@ -5,7 +5,7 @@ public class AccountManager {
     private String email;
     private String firstName;
     private String lastName;
-    private int accountID;
+    private int accountID = -1;
     
     public AccountManager() {}
 
@@ -20,8 +20,19 @@ public class AccountManager {
         String[] names = {this.firstName, this.lastName};
         return names;
     }
-    
+
     public String getEmail() {
         return this.email;
+    }
+
+    public int getID() {
+        return this.accountID;
+    }
+
+    public void logout() {
+        this.email = null;
+        this.firstName = null;
+        this.lastName = null;
+        this.accountID = -1;
     }
 }
