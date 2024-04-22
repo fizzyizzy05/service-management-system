@@ -12,10 +12,8 @@ public class AdminController {
     @FXML Label nameLabel;
     
     @FXML public void refresh() throws IOException, SQLException {
-        Connection dbConnection = App.getConnection();
-        Statement usrStmt = dbConnection.createStatement();
-        ResultSet usrResults = usrStmt.executeQuery("SELECT firstName, lastName, email FROM Users WHERE email='" + loggedInUser + "';");
-        nameLabel.setText(String.format("%s %s (%s)", usrResults.getString("firstName"), usrResults.getString("lastName"),usrResults.getString("email")));
+        AccountManager accountManager = App.getAccountManager();
+        nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
     }
 
 }
