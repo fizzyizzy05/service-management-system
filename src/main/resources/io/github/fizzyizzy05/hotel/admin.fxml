@@ -31,7 +31,7 @@
       </MenuBar>
       <HBox prefWidth="800.0" spacing="16.0">
          <children>
-            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="nameLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
          </children>
          <opaqueInsets>
             <Insets />
