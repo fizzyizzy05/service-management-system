@@ -4,5 +4,7 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 
 public class AdminController {
-    
+    @FXML private void refresh() throws IOException {
+
+    }
 }
