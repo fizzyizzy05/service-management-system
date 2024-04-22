@@ -21,6 +21,6 @@ public class AdminController {
     }
 
     @FXML public void changePasswordFromDefault() throws IOException {
-        App.setRoot("admin-password-change.java");
+        App.setRoot("admin-password-change");
     }
 }
