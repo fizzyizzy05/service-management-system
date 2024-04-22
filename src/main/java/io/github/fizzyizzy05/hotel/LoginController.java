@@ -18,7 +18,9 @@ public class LoginController {
         Statement stmt = dbConnection.createStatement();
         ResultSet accDetails = stmt.executeQuery("SELECT password, firstName, lastName, ID FROM Users WHERE email = '" + emailIn.getText() + "';");
         if (passIn.getText().equals(accDetails.getString("password"))) {
-            App.getAccountManager().login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"));
+            AccountManager accountManager = App.getAccountManager();
+            accountManager.login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"));
+            stmt.close();
             dbConnection.close();
             App.setRoot("admin");
         } else if (accDetails.getString("password") == null) {
@@ -26,11 +28,13 @@ public class LoginController {
             alert.setTitle("Login error");
             alert.setContentText("No account with this username was found. Please try again, or register a new account.");
             alert.showAndWait();
+            stmt.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Login error");
             alert.setContentText("This password is incorrect. Please try again.");
             alert.showAndWait();
+            stmt.close();
         }
     }
 
