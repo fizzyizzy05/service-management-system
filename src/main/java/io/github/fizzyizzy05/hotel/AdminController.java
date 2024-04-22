@@ -11,8 +11,12 @@ public class AdminController {
     @FXML Label nameLabel;
     AccountManager accountManager = App.getAccountManager();
 
-    @FXML public void refresh() throws IOException, SQLException {
+    @FXML public void refresh() throws IOException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
     }
 
+    @FXML public void logout() throws IOException {
+        accountManager.logout();
+        App.setRoot("login");
+    }
 }
