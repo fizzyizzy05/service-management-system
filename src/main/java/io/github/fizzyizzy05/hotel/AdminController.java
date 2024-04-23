@@ -5,14 +5,25 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 import java.sql.SQLException;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class AdminController {
     String loggedInUser;
     @FXML Label nameLabel;
     AccountManager accountManager = App.getAccountManager();
 
+    @FXML TextField firstNameIn;
+    @FXML TextField lastNameIn;
+    @FXML TextField phoneIn;
+    @FXML TextField emailIn;
+
+
     @FXML public void refresh() throws IOException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
+        firstNameIn.setText(accountManager.getNames()[0]);
+        lastNameIn.setText(accountManager.getNames()[1]);
+        emailIn.setText(accountManager.getEmail());
+        phoneIn.setText(accountManager.getPhoneNo());
     }
 
     @FXML public void logout() throws IOException {
@@ -23,4 +34,6 @@ public class AdminController {
     public void initialize() throws IOException {
         refresh();
     }
+
+    
 }
