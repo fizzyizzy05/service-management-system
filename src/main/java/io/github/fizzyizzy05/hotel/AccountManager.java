@@ -12,15 +12,17 @@ public class AccountManager {
     private String lastName;
     private int accountID = -1;
     private String password;
+    private int phoneNo;
     
     public AccountManager() {}
 
-    public void login(String email, String firstName, String lastName, int accountID, String password) {
+    public void login(String email, String firstName, String lastName, int accountID, String password, int phoneNo) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.accountID = accountID;
         this.password = password;
+        this.phoneNo = phoneNo;
     }
 
     public String[] getNames() {
@@ -47,6 +49,10 @@ public class AccountManager {
         return this.password;
     }
 
+    public int getPhoneNo() {
+        return this.phoneNo;
+    }
+
     public void updateInfo() throws SQLException {
         Connection dbConnection = App.getConnection();
         Statement stmt = dbConnection.createStatement();
@@ -56,6 +62,7 @@ public class AccountManager {
         this.firstName = accountDetails.getString("firstName");
         this.lastName = accountDetails.getString("lastName");
         this.accountID = accountDetails.getInt("ID");
+        this.phoneNo = accountDetails.getInt("phoneNo");
         stmt.close();
         dbConnection.close();
     }

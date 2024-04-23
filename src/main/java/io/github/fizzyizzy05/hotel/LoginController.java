@@ -16,10 +16,10 @@ public class LoginController {
     private void login() throws IOException, SQLException {
         Connection dbConnection = App.getConnection();
         Statement stmt = dbConnection.createStatement();
-        ResultSet accDetails = stmt.executeQuery("SELECT password, firstName, lastName, ID FROM Users WHERE email = '" + emailIn.getText() + "';");
+        ResultSet accDetails = stmt.executeQuery("SELECT password, firstName, lastName, phoneNo, ID FROM Users WHERE email = '" + emailIn.getText() + "';");
         if (passIn.getText().equals(accDetails.getString("password"))) {
             AccountManager accountManager = App.getAccountManager();
-            accountManager.login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"));
+            accountManager.login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"),accDetails.getInt("phoneNo"));
             stmt.close();
             dbConnection.close();
             if (accountManager.getEmail().equals("admin@localhost") && accountManager.getPassword().equals("admin")) {
