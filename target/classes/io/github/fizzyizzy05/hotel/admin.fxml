@@ -103,7 +103,7 @@
                                     <Label text="Name" />
                                     <TextField fx:id="firstNameIn" promptText="First name" GridPane.columnIndex="1" />
                                     <TextField fx:id="lastNameIn" promptText="Last name" GridPane.columnIndex="2" />
-                                    <TextField promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="emailIn" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <TextField fx:id="phoneIn" promptText="Phone Number" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                     <Label text="Contact details" GridPane.rowIndex="1" />
                                  </children>
