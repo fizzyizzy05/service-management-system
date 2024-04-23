@@ -34,4 +34,8 @@ public class AdminPasswordChangeController {
             alert.showAndWait();
         }
     }
+
+    public void logout() throws IOException {
+        App.setRoot("login");
+    }
 }
