@@ -19,7 +19,7 @@ public class LoginController {
         ResultSet accDetails = stmt.executeQuery("SELECT password, firstName, lastName, phoneNo, ID FROM Users WHERE email = '" + emailIn.getText() + "';");
         if (passIn.getText().equals(accDetails.getString("password"))) {
             AccountManager accountManager = App.getAccountManager();
-            accountManager.login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"),accDetails.getInt("phoneNo"));
+            accountManager.login(emailIn.getText(), accDetails.getString("firstName"), accDetails.getString("lastName"), accDetails.getInt("ID"), accDetails.getString("password"),accDetails.getString("phoneNo"));
             stmt.close();
             dbConnection.close();
             if (accountManager.getEmail().equals("admin@localhost") && accountManager.getPassword().equals("admin")) {

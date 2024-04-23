@@ -44,7 +44,7 @@ public class App extends Application {
                                 "lastName TEXT NOT NULL, " + 
                                 "password TEXT NOT NULL, " +
                                 "email TEXT NOT NULL, " + 
-                                "phoneNo INT(11), " +
+                                "phoneNo TEXT(11), " +
                                 "staff BOOL NOT NULL," + 
                                 "PRIMARY KEY (ID));",
                         "INSERT OR IGNORE INTO Users (ID, firstName, lastName, password, email, phoneNo, staff) " + 

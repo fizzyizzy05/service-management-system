@@ -12,11 +12,11 @@ public class AccountManager {
     private String lastName;
     private int accountID = -1;
     private String password;
-    private int phoneNo;
+    private String phoneNo;
     
     public AccountManager() {}
 
-    public void login(String email, String firstName, String lastName, int accountID, String password, int phoneNo) {
+    public void login(String email, String firstName, String lastName, int accountID, String password, String phoneNo) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,20 +49,20 @@ public class AccountManager {
         return this.password;
     }
 
-    public int getPhoneNo() {
+    public String getPhoneNo() {
         return this.phoneNo;
     }
 
     public void updateInfo() throws SQLException {
         Connection dbConnection = App.getConnection();
         Statement stmt = dbConnection.createStatement();
-        ResultSet accountDetails = stmt.executeQuery("SELECT ID, firstName, lastName, email, password FROM Users WHERE ID='" + this.accountID + "';");
+        ResultSet accountDetails = stmt.executeQuery("SELECT ID, firstName, lastName, email, password, phoneNo FROM Users WHERE ID='" + this.accountID + "';");
         this.email = accountDetails.getString("email");
         this.password = accountDetails.getString("password");
         this.firstName = accountDetails.getString("firstName");
         this.lastName = accountDetails.getString("lastName");
         this.accountID = accountDetails.getInt("ID");
-        this.phoneNo = accountDetails.getInt("phoneNo");
+        this.phoneNo = accountDetails.getString("phoneNo");
         stmt.close();
         dbConnection.close();
     }
