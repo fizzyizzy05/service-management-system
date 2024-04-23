@@ -111,7 +111,7 @@
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
                               </GridPane>
-                              <Button mnemonicParsing="false" text="Update details">
+                              <Button mnemonicParsing="false" onAction="#updateInfo" text="Update details">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>

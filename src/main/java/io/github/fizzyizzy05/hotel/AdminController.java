@@ -33,7 +33,23 @@ public class AdminController {
 
     public void initialize() throws IOException {
         refresh();
+        if (accountManager.getEmail().equals("admin@localhost")) {
+            emailIn.setEditable(false);
+            emailIn.setOpacity(0.5);
+        }
     }
 
+    @FXML public void updateInfo() throws IOException, SQLException {
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        stmt.executeUpdate("UPDATE Users SET firstName = '" + firstNameIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+        stmt.executeUpdate("UPDATE Users SET lastName = '" + lastNameIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+        stmt.executeUpdate("UPDATE Users SET email = '" + emailIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+        stmt.executeUpdate("UPDATE Users SET phoneNo = '" + phoneIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+        stmt.close();
+        dbConnection.close();
+        accountManager.updateInfo();
+        refresh();
+    }
     
 }
