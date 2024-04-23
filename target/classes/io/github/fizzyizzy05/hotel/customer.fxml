@@ -70,7 +70,7 @@
                                     <Font name="System Bold" size="17.0" />
                                  </font>
                               </Label>
-                              <GridPane maxWidth="500.0" minWidth="300.0" prefHeight="90.0" prefWidth="549.0" VBox.vgrow="NEVER">
+                              <GridPane maxWidth="500.0" minWidth="300.0" prefWidth="549.0" VBox.vgrow="NEVER">
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="150.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="199.0" />
@@ -78,24 +78,21 @@
                                  </columnConstraints>
                                  <rowConstraints>
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
                                     <Label text="Name" />
-                                    <TextField promptText="First name" GridPane.columnIndex="1" />
-                                    <TextField promptText="Last name" GridPane.columnIndex="2" />
-                                    <TextField prefWidth="410.0" promptText="a@example.com" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
-                                    <Label text="Email" GridPane.rowIndex="1" />
-                                    <TextField promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <TextField promptText="Phone Number" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                    <Label text="Contact details" GridPane.rowIndex="2" />
+                                    <TextField fx:id="firstNameIn" promptText="First name" GridPane.columnIndex="1" />
+                                    <TextField fx:id="lastNameIn" promptText="Last name" GridPane.columnIndex="2" />
+                                    <TextField fx:id="emailIn" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="phoneIn" promptText="Phone Number" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Label text="Contact details" GridPane.rowIndex="1" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="10.0" />
                                  </VBox.margin>
                               </GridPane>
-                              <Button mnemonicParsing="false" text="Update details">
+                              <Button mnemonicParsing="false" onAction="#updateInfo" text="Update details">
                                  <VBox.margin>
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
