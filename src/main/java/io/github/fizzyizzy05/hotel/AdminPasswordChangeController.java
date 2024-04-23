@@ -9,7 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert.AlertType;
 
-public class changeDefaultPassController {
+public class AdminPasswordChangeController {
     @FXML PasswordField newPassIn;
     @FXML PasswordField repeatPassIn;
 
