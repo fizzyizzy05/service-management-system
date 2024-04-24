@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 import java.sql.SQLException;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.*;
 import javafx.scene.control.TextField;
 
 public class AdminController {
@@ -40,16 +42,23 @@ public class AdminController {
     }
 
     @FXML public void updateInfo() throws IOException, SQLException {
-        Connection dbConnection = App.getConnection();
-        Statement stmt = dbConnection.createStatement();
-        stmt.executeUpdate("UPDATE Users SET firstName = '" + firstNameIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
-        stmt.executeUpdate("UPDATE Users SET lastName = '" + lastNameIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
-        stmt.executeUpdate("UPDATE Users SET email = '" + emailIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
-        stmt.executeUpdate("UPDATE Users SET phoneNo = '" + phoneIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
-        stmt.close();
-        dbConnection.close();
-        accountManager.updateInfo();
-        refresh();
+        try {
+            Connection dbConnection = App.getConnection();
+            Statement stmt = dbConnection.createStatement();
+            stmt.executeUpdate("UPDATE Users SET firstName = '" + firstNameIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+            stmt.executeUpdate("UPDATE Users SET lastName = '" + lastNameIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+            stmt.executeUpdate("UPDATE Users SET email = '" + emailIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+            stmt.executeUpdate("UPDATE Users SET phoneNo = '" + phoneIn.getText() + "' WHERE ID = '" + accountManager.getID() + "';");
+            stmt.close();
+            dbConnection.close();
+            accountManager.updateInfo();
+            refresh();
+        } catch (Exception SQLException) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Database error");
+            alert.setContentText("There was an error with updating the database. Please contact the system administrator.");
+            alert.showAndWait();
+        }
     }
     
 }
