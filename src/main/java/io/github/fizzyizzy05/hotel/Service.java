@@ -10,5 +10,7 @@ public class Service {
         this.price = price;
     }
 
-    
+    public int getID() {
+        return this.id;
+    }
 }
