@@ -59,7 +59,7 @@
       </HBox>
       <Accordion prefWidth="800.0" VBox.vgrow="ALWAYS">
         <panes>
-          <TitledPane animated="false" text="Current Appointments">
+          <TitledPane text="Current Appointments">
                <content>
                   <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
                      <content>
@@ -68,7 +68,7 @@
                   </ScrollPane>
                </content>
             </TitledPane>
-          <TitledPane animated="false" text="Manage Services">
+          <TitledPane expanded="false" text="Manage Services">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -77,7 +77,7 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TitledPane animated="false" text="Manage Account">
+            <TitledPane expanded="false" text="Manage Account">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
