@@ -4,8 +4,11 @@ import java.sql.*;
 import javafx.fxml.FXML;
 import java.io.IOException;
 import java.sql.SQLException;
+
 import javafx.scene.control.Label;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
 
 public class CustomerController {
     String loggedInUser;
@@ -16,6 +19,9 @@ public class CustomerController {
     @FXML TextField lastNameIn;
     @FXML TextField phoneIn;
     @FXML TextField emailIn;
+
+    @FXML Accordion accordion;
+    @FXML TitledPane appointmentsPage;
 
     @FXML public void refresh() throws IOException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
@@ -32,6 +38,7 @@ public class CustomerController {
 
     public void initialize() throws IOException {
         refresh();
+        accordion.setExpandedPane(appointmentsPage);
     }
 
     @FXML public void updateInfo() throws IOException, SQLException {
