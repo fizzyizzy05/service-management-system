@@ -1,5 +1,10 @@
 package io.github.fizzyizzy05.hotel;
 
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
@@ -44,5 +49,15 @@ public class Widgets {
             outputRate = "Free";
         }
         return outputRate;
+    }
+
+    public static String getService(int id) throws SQLException {
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        ResultSet services = stmt.executeQuery("SELECT name FROM Services WHERE id='" + id + "';");
+        String service = services.getString("name");
+        stmt.close();
+        dbConnection.close();
+        return service;
     }
 }
