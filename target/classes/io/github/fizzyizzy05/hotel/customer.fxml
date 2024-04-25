@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -54,12 +55,16 @@
             <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
          </padding>
       </HBox>
-      <Accordion VBox.vgrow="ALWAYS">
+      <Accordion fx:id="accordion" VBox.vgrow="ALWAYS">
         <panes>
-            <TitledPane animated="false" text="My Appointments">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
+            <TitledPane fx:id="appointmentsPage" animated="false" text="My Appointments">
+               <content>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox fx:id="appointmentsList" prefHeight="200.0" />
+                     </content>
+                  </ScrollPane>
+               </content>
             </TitledPane>
             <TitledPane text="Manage Account">
                <content>
