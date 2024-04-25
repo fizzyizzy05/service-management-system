@@ -58,7 +58,7 @@ public class RegisterController {
             alert.setContentText("You need to agree to the terms and conditions");
             alert.showAndWait();
         } else {
-            try {
+            {
                 Connection dbConnection = App.getConnection();
                 Statement stmt = dbConnection.createStatement();
                 ResultSet accounts = stmt.executeQuery("SELECT id FROM Users;");
@@ -73,8 +73,7 @@ public class RegisterController {
                                     "'" + passIn.getText() + "', " +
                                     "'" + emailIn.getText() + "', " +
                                     "'" + phoneIn.getText() + "', " +
-                                    "'" + false + "'', " +
-                                    "');"
+                                    "'" + false + "');"
                 );
                 stmt.close();
                 dbConnection.close();
@@ -84,11 +83,6 @@ public class RegisterController {
                 alert.showAndWait();
                 App.getAccountManager().login(emailIn.getText(), firstNameIn.getText(), lastNameIn.getText(), maxID, passIn.getText(), phoneIn.getText(), "false");
                 App.setRoot("customer");
-            } catch (Exception SQLException) {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Database error");
-                alert.setContentText("There was an error with updating the database. Please contact the system administrator.");
-                alert.showAndWait();
             }
         }
     }
