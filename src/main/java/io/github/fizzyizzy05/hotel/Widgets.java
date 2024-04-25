@@ -25,6 +25,9 @@ public class Widgets {
         Label idLbl = new Label(Integer.toString(id));
         Label nameLbl = new Label(title);
         Label serviceLbl = new Label(service);
+        // Styling
+        widget.setPadding(new Insets(5, 10, 5, 10));
+        nameLbl.setPadding(new Insets(0, 5, 0, 5));
         widget.getChildren().addAll(idLbl, nameLbl, serviceLbl);
         return widget;
     }
