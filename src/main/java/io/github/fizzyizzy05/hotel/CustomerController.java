@@ -23,7 +23,6 @@ public class CustomerController {
         lastNameIn.setText(accountManager.getNames()[1]);
         emailIn.setText(accountManager.getEmail());
         phoneIn.setText(accountManager.getPhoneNo());
-
     }
 
     @FXML public void logout() throws IOException {
