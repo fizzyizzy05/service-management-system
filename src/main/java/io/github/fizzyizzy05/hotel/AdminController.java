@@ -91,7 +91,7 @@ public class AdminController {
     }
 
     @FXML public void addService() throws IOException, SQLException {
-        int id = services.size() + 1;
+        int id = services.get(services.size() - 1).getID() + 1;
         Connection dbConnection = App.getConnection();
         Statement stmt = dbConnection.createStatement();
         stmt.executeUpdate("INSERT INTO Services (id, name, hourlyRate) " +
