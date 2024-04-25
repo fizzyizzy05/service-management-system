@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.fizzyizzy05.hotel.NewAppointmentController">
    <children>
       <Label text="New Appointment">
@@ -83,6 +82,6 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Button>
-      <Hyperlink text="Go back" />
+      <Hyperlink onAction="#goBack" text="Go back" />
    </children>
 </VBox>

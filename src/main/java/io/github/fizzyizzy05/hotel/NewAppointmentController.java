@@ -72,4 +72,8 @@ public class NewAppointmentController {
             App.setRoot("customer");
         }
     }
+    
+    @FXML public void goBack() throws IOException {
+        App.setRoot("customer");
+    }
 }
