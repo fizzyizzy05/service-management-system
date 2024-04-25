@@ -20,7 +20,7 @@ public class Widgets {
         return widget;
     }
 
-    public static HBox adminAppointmentWidget(int id, String title, String desc, String service, String time, int Customer) {
+    public static HBox appointmentWidget(int id, String title, String desc, String service, String time, int Customer) {
         HBox widget = new HBox();
         Label idLbl = new Label(Integer.toString(id));
         Label nameLbl = new Label(title);
