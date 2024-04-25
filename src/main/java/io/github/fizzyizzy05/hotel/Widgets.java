@@ -19,6 +19,7 @@ public class Widgets {
         return widget;
     }
 
+    // Function to get a formatted rate in pence/pounds
     public static String formatPrice(int rate) {
         String outputRate;
         Double doubleRate = Double.valueOf(rate) / 100;
