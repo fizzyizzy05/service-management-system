@@ -19,6 +19,11 @@ public class CustomerController {
 
     @FXML public void refresh() throws IOException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
+        firstNameIn.setText(accountManager.getNames()[0]);
+        lastNameIn.setText(accountManager.getNames()[1]);
+        emailIn.setText(accountManager.getEmail());
+        phoneIn.setText(accountManager.getPhoneNo());
+
     }
 
     @FXML public void logout() throws IOException {
