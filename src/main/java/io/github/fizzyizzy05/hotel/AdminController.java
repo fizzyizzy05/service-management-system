@@ -3,6 +3,7 @@ package io.github.fizzyizzy05.hotel;
 import java.sql.*;
 import javafx.fxml.FXML;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.sql.SQLException;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
@@ -26,12 +27,29 @@ public class AdminController {
     @FXML TextField phoneIn;
     @FXML TextField emailIn;
 
-    @FXML public void refresh() throws IOException {
+    // Add service
+    @FXML TextField serviceNameIn;
+    @FXML TextField hourlyRateIn;
+
+    // Current Services
+    ArrayList<Service> services;
+
+    @FXML public void refresh() throws IOException, SQLException {
+        services = new ArrayList<Service>();
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
         firstNameIn.setText(accountManager.getNames()[0]);
         lastNameIn.setText(accountManager.getNames()[1]);
         emailIn.setText(accountManager.getEmail());
         phoneIn.setText(accountManager.getPhoneNo());
+
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        ResultSet serviceRs = stmt.executeQuery("SELECT * FROM Services;");
+        while (serviceRs.next()) {
+            services.add(new Service(serviceRs.getInt("id"), serviceRs.getString("name"), serviceRs.getInt("hourlyRate")));
+        }
+        stmt.close();
+        dbConnection.close();
     }
 
     @FXML public void logout() throws IOException {
@@ -39,7 +57,7 @@ public class AdminController {
         App.setRoot("login");
     }
 
-    public void initialize() throws IOException {
+    public void initialize() throws IOException, SQLException {
         refresh();
         if (accountManager.getEmail().equals("admin@localhost")) {
             emailIn.setEditable(false);
@@ -69,7 +87,17 @@ public class AdminController {
     }
 
     @FXML public void addService() throws IOException, SQLException {
-        
+        int id = services.size() + 1;
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        stmt.executeUpdate("INSERT INTO Services (id, name, hourlyRate) " +
+                            "VALUES ('" + id + "', '" +
+                            serviceNameIn.getText() + "', " +
+                            "'" + Integer.parseInt(hourlyRateIn.getText()) + "');"
+        );
+        stmt.close();
+        dbConnection.close();
+        refresh();
     }
     
 }

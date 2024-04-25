@@ -86,9 +86,9 @@
                                 </rowConstraints>
                                  <children>
                                     <Label text="Add a new service" />
-                                    <TextField prefWidth="257.0" promptText="Service Name" GridPane.columnIndex="1" />
-                                    <Button mnemonicParsing="false" text="Add" GridPane.columnIndex="3" />
-                                    <TextField promptText="Hourly Rate" GridPane.columnIndex="2" />
+                                    <TextField fx:id="serviceNameIn" prefWidth="257.0" promptText="Service Name" GridPane.columnIndex="1" />
+                                    <Button mnemonicParsing="false" onAction="#addService" text="Add" GridPane.columnIndex="3" />
+                                    <TextField fx:id="hourlyRateIn" promptText="Hourly Rate" GridPane.columnIndex="2" />
                                  </children>
                               </GridPane>
                            </children></VBox>
