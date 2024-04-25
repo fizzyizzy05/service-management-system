@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -89,6 +90,21 @@
                                     <TextField fx:id="serviceNameIn" prefWidth="257.0" promptText="Service Name" GridPane.columnIndex="1" />
                                     <Button mnemonicParsing="false" onAction="#addService" text="Add" GridPane.columnIndex="3" />
                                     <TextField fx:id="hourlyRateIn" promptText="Hourly Rate" GridPane.columnIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" percentWidth="0.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Delete a service" />
+                                    <Button mnemonicParsing="false" onAction="#deleteService" text="Delete" textFill="RED" GridPane.columnIndex="2" />
+                                    <ChoiceBox fx:id="deleteServiceBox" GridPane.columnIndex="1" />
                                  </children>
                               </GridPane>
                               <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
