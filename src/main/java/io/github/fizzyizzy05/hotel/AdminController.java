@@ -12,16 +12,19 @@ import javafx.scene.control.Accordion;
 import javafx.scene.control.TitledPane;
 
 public class AdminController {
-    String loggedInUser;
-    @FXML Label nameLabel;
+    // Account label
     AccountManager accountManager = App.getAccountManager();
+    @FXML Label nameLabel;
 
+    // Main accordion
+    @FXML Accordion accordion;
+    @FXML TitledPane appointmentsPage;
+
+    // Manage account
     @FXML TextField firstNameIn;
     @FXML TextField lastNameIn;
     @FXML TextField phoneIn;
     @FXML TextField emailIn;
-    @FXML Accordion accordion;
-    @FXML TitledPane appointmentsPage;
 
     @FXML public void refresh() throws IOException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
@@ -63,6 +66,10 @@ public class AdminController {
             alert.setContentText("There was an error with updating the database. Please contact the system administrator.");
             alert.showAndWait();
         }
+    }
+
+    @FXML public void addService() throws IOException, SQLException {
+        
     }
     
 }
