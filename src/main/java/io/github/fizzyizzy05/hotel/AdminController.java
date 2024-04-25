@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.*;
@@ -33,9 +35,11 @@ public class AdminController {
 
     // Current Services
     ArrayList<Service> services;
+    @FXML VBox servicesList;
 
     @FXML public void refresh() throws IOException, SQLException {
         services = new ArrayList<Service>();
+        servicesList.getChildren().clear();
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
         firstNameIn.setText(accountManager.getNames()[0]);
         lastNameIn.setText(accountManager.getNames()[1]);
@@ -47,6 +51,7 @@ public class AdminController {
         ResultSet serviceRs = stmt.executeQuery("SELECT * FROM Services;");
         while (serviceRs.next()) {
             services.add(new Service(serviceRs.getInt("id"), serviceRs.getString("name"), serviceRs.getInt("hourlyRate")));
+            servicesList.getChildren().add(Widgets.serviceWidget(serviceRs.getInt("id"), serviceRs.getString("name"), serviceRs.getInt("hourlyRate")));
         }
         stmt.close();
         dbConnection.close();
