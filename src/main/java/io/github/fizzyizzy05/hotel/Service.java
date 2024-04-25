@@ -8,6 +8,7 @@ public class Service {
     public Service(int id, String name, int price) {
         this.name = name;
         this.price = price;
+        this.id = id;
     }
 
     public int getID() {
