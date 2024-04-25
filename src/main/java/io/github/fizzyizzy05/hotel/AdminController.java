@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Alert.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Accordion;
@@ -27,6 +28,7 @@ public class AdminController {
     @FXML TextField lastNameIn;
     @FXML TextField phoneIn;
     @FXML TextField emailIn;
+    @FXML Button delAccountBtn;
 
     // Add service
     @FXML TextField serviceNameIn;
@@ -67,6 +69,8 @@ public class AdminController {
         if (accountManager.getEmail().equals("admin@localhost")) {
             emailIn.setEditable(false);
             emailIn.setOpacity(0.5);
+            delAccountBtn.setDisable(true);
+            delAccountBtn.setOpacity(0.5);
         }
         accordion.setExpandedPane(appointmentsPage);
     }

@@ -193,7 +193,7 @@
                                     <Insets bottom="20.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" text="Delete Account" textFill="RED" />
+                              <Button fx:id="delAccountBtn" mnemonicParsing="false" text="Delete Account" textFill="RED" />
                            </children>
                         </VBox>
                      </children>
