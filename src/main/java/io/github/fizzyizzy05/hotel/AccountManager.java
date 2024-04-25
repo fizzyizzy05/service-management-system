@@ -13,11 +13,11 @@ public class AccountManager {
     private int accountID = -1;
     private String password;
     private String phoneNo;
-    private boolean staff;
+    private String staff;
     
     public AccountManager() {}
 
-    public void login(String email, String firstName, String lastName, int accountID, String password, String phoneNo, boolean staff) {
+    public void login(String email, String firstName, String lastName, int accountID, String password, String phoneNo, String staff) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -70,6 +70,10 @@ public class AccountManager {
     }
 
     public boolean isStaff() {
-        return staff;
+        if (staff.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
