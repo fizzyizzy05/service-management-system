@@ -25,6 +25,7 @@ public class Widgets {
         Label idLbl = new Label(Integer.toString(id));
         Label nameLbl = new Label(title);
         Label serviceLbl = new Label(service);
+        widget.getChildren().addAll(idLbl, nameLbl, serviceLbl);
         return widget;
     }
 
