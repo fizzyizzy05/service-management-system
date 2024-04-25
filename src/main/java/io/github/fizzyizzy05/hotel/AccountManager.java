@@ -68,4 +68,8 @@ public class AccountManager {
         stmt.close();
         dbConnection.close();
     }
+
+    public boolean isStaff() {
+        return staff;
+    }
 }
