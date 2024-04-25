@@ -17,13 +17,14 @@ public class AccountManager {
     
     public AccountManager() {}
 
-    public void login(String email, String firstName, String lastName, int accountID, String password, String phoneNo) {
+    public void login(String email, String firstName, String lastName, int accountID, String password, String phoneNo, boolean staff) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.accountID = accountID;
         this.password = password;
         this.phoneNo = phoneNo;
+        this.staff = staff;
     }
 
     public String[] getNames() {
