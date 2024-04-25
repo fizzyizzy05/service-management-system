@@ -4,7 +4,7 @@ import java.sql.*;
 import javafx.fxml.FXML;
 import java.io.IOException;
 import java.sql.SQLException;
-
+import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.TextField;
@@ -22,13 +22,21 @@ public class CustomerController {
 
     @FXML Accordion accordion;
     @FXML TitledPane appointmentsPage;
+    @FXML VBox appointmentsList;
 
-    @FXML public void refresh() throws IOException {
+    @FXML public void refresh() throws IOException, SQLException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
         firstNameIn.setText(accountManager.getNames()[0]);
         lastNameIn.setText(accountManager.getNames()[1]);
         emailIn.setText(accountManager.getEmail());
         phoneIn.setText(accountManager.getPhoneNo());
+
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        ResultSet appointments = stmt.executeQuery("SELECT * FROM Appointments WHERE customer='" + App.getAccountManager().getID() + "';");
+        while (appointments.next()) {
+            appointmentsList.getChildren().add(Widgets.appointmentWidget(appointments.getInt("id"), appointments.getString("title"), appointments.getString("desc"), Widgets.getService(appointments.getInt("id")), appointments.getString("time"), appointments.getInt("customer")));
+        }
     }
 
     @FXML public void logout() throws IOException {
@@ -36,7 +44,7 @@ public class CustomerController {
         App.setRoot("login");
     }
 
-    public void initialize() throws IOException {
+    public void initialize() throws IOException, SQLException {
         refresh();
         accordion.setExpandedPane(appointmentsPage);
     }
