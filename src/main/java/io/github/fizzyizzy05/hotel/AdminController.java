@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.*;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.TitledPane;
 
 public class AdminController {
     String loggedInUser;
@@ -18,7 +20,8 @@ public class AdminController {
     @FXML TextField lastNameIn;
     @FXML TextField phoneIn;
     @FXML TextField emailIn;
-
+    @FXML Accordion accordion;
+    @FXML TitledPane appointmentsPage;
 
     @FXML public void refresh() throws IOException {
         nameLabel.setText(String.format("%s %s (%s)", accountManager.getNames()[0], accountManager.getNames()[1], accountManager.getEmail()));
@@ -39,6 +42,7 @@ public class AdminController {
             emailIn.setEditable(false);
             emailIn.setOpacity(0.5);
         }
+        accordion.setExpandedPane(appointmentsPage);
     }
 
     @FXML public void updateInfo() throws IOException, SQLException {

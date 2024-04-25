@@ -57,9 +57,9 @@
             <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
          </padding>
       </HBox>
-      <Accordion prefWidth="800.0" VBox.vgrow="ALWAYS">
+      <Accordion fx:id="accordion" prefWidth="800.0" VBox.vgrow="ALWAYS">
         <panes>
-          <TitledPane text="Current Appointments">
+          <TitledPane fx:id="appointmentsPage" text="Current Appointments">
                <content>
                   <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
                      <content>
