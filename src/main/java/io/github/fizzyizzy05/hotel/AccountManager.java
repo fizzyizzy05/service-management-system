@@ -13,6 +13,7 @@ public class AccountManager {
     private int accountID = -1;
     private String password;
     private String phoneNo;
+    private boolean staff;
     
     public AccountManager() {}
 
