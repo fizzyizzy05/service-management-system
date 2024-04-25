@@ -91,7 +91,13 @@
                                     <TextField fx:id="hourlyRateIn" promptText="Hourly Rate" GridPane.columnIndex="2" />
                                  </children>
                               </GridPane>
-                           </children></VBox>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="servicesList" prefHeight="200.0" prefWidth="778.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
                </content>
