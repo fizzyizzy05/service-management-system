@@ -82,7 +82,8 @@ public class RegisterController {
                 alert.setTitle("Account created");
                 alert.setContentText("Account has been successfully created");
                 alert.showAndWait();
-                App.getAccountManager().login(emailIn.getText(), firstNameIn.getText(), lastNameIn.getText(), maxID, passIn.getText(), phoneIn.getText(), false);
+                App.getAccountManager().login(emailIn.getText(), firstNameIn.getText(), lastNameIn.getText(), maxID, passIn.getText(), phoneIn.getText(), "false");
+                App.setRoot("customer");
             } catch (Exception SQLException) {
                 Alert alert = new Alert(AlertType.ERROR);
                 alert.setTitle("Database error");

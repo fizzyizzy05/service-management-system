@@ -56,7 +56,7 @@
       </HBox>
       <Accordion VBox.vgrow="ALWAYS">
         <panes>
-            <TitledPane animated="false" text="Manage Account">
+            <TitledPane text="Manage Account">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
