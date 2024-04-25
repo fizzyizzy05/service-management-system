@@ -46,4 +46,8 @@ public class CustomerController {
         accountManager.updateInfo();
         refresh();
     }
+
+    @FXML public void deleteAccount() throws IOException {
+        App.setRoot("delete-account");
+    }
 }
