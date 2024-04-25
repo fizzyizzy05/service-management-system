@@ -42,4 +42,12 @@ public class DeleteAccountController {
             alert.showAndWait();
         }
     }
+
+    public void goBack() throws IOException {
+        if (App.getAccountManager().isStaff()) {
+            App.setRoot("admin"); 
+        } else {
+            App.setRoot("customer");
+        }
+    }
 }
