@@ -65,6 +65,11 @@ public class NewAppointmentController {
             );
             stmt.close();
             dbConnection.close();
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Complete");
+            alert.setContentText("Appointment has been made. Standby for updates.");
+            alert.showAndWait();
+            App.setRoot("customer");
         }
     }
 }
