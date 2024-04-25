@@ -34,10 +34,11 @@ public class AdminController {
     @FXML TextField serviceNameIn;
     @FXML TextField hourlyRateIn;
 
-    // Current Services
+    // Current Services & Appointments
     ArrayList<Service> services;
     @FXML VBox servicesList;
     @FXML TextField idSelect;
+    @FXML VBox appointmentsList;
 
     @FXML public void refresh() throws IOException, SQLException {
         services = new ArrayList<Service>();
@@ -55,6 +56,12 @@ public class AdminController {
             services.add(new Service(serviceRs.getInt("id"), serviceRs.getString("name"), serviceRs.getInt("hourlyRate")));
             servicesList.getChildren().add(Widgets.serviceWidget(serviceRs.getInt("id"), serviceRs.getString("name"), serviceRs.getInt("hourlyRate")));
         }
+
+        ResultSet appointments = stmt.executeQuery("SELECT * FROM Appointments;");
+        while (appointments.next()) {
+            appointmentsList.getChildren().add(Widgets.appointmentWidget(appointments.getInt("id"), appointments.getString("title"), appointments.getString("desc"), Widgets.getService(appointments.getInt("id")), appointments.getString("time"), appointments.getInt("customer")));
+        }
+
         stmt.close();
         dbConnection.close();
     }

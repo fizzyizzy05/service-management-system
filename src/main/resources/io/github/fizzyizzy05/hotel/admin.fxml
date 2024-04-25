@@ -61,11 +61,19 @@
         <panes>
           <TitledPane fx:id="appointmentsPage" text="Current Appointments">
                <content>
-                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
-                     <content>
-                        <VBox prefHeight="189.0" prefWidth="798.0" />
-                     </content>
-                  </ScrollPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="appointmentsList" prefHeight="200.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
                </content>
             </TitledPane>
           <TitledPane expanded="false" text="Manage Services">
