@@ -60,4 +60,14 @@ public class Widgets {
         dbConnection.close();
         return service;
     }
+
+    public static String getCustomer(int id) throws SQLException {
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        ResultSet services = stmt.executeQuery("SELECT name FROM Users WHERE id='" + id + "';");
+        String name = services.getString("name");
+        stmt.close();
+        dbConnection.close();
+        return name;
+    }
 }
