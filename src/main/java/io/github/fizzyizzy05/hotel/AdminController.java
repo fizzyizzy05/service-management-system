@@ -9,6 +9,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.TitledPane;
@@ -35,6 +37,7 @@ public class AdminController {
     // Current Services
     ArrayList<Service> services;
     @FXML VBox servicesList;
+    @FXML TextField idSelect;
 
     @FXML public void refresh() throws IOException, SQLException {
         services = new ArrayList<Service>();
@@ -104,4 +107,12 @@ public class AdminController {
         refresh();
     }
     
+    @FXML public void deleteService() throws IOException, SQLException {
+        Connection dbConnection = App.getConnection();
+        Statement stmt = dbConnection.createStatement();
+        stmt.executeUpdate("DELETE FROM Services WHERE id='" + idSelect.getText() + "';");
+        stmt.close();
+        dbConnection.close();
+        refresh();
+    }
 }
