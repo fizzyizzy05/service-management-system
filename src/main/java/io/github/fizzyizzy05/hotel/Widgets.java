@@ -20,6 +20,14 @@ public class Widgets {
         return widget;
     }
 
+    public static HBox adminAppointmentWidget(int id, String title, String desc, String service, String time, int Customer) {
+        HBox widget = new HBox();
+        Label idLbl = new Label(Integer.toString(id));
+        Label nameLbl = new Label(title);
+        Label serviceLbl = new Label(service);
+        return widget;
+    }
+
     // Function to get a formatted rate in pence/pounds
     public static String formatPrice(int rate) {
         String outputRate;
