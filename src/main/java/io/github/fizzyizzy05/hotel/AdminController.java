@@ -103,24 +103,31 @@ public class AdminController {
     }
 
     @FXML public void addService() throws IOException, SQLException {
-        int id;
-        if (services.size() > 0) {
-            id = services.get(services.size() - 1).getID() + 1;
+        if (serviceNameIn.getText().equals("") || hourlyRateIn.getText().equals("")) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Please fill in the service and hourly rate");
+            alert.showAndWait();
         } else {
-            id = 1;
+            int id;
+            if (services.size() > 0) {
+                id = services.get(services.size() - 1).getID() + 1;
+            } else {
+                id = 1;
+            }
+            Connection dbConnection = App.getConnection();
+            Statement stmt = dbConnection.createStatement();
+            stmt.executeUpdate("INSERT INTO Services (id, name, hourlyRate) " +
+                                "VALUES ('" + id + "', '" +
+                                serviceNameIn.getText() + "', " +
+                                "'" + Integer.parseInt(hourlyRateIn.getText()) + "');"
+            );
+            stmt.close();
+            dbConnection.close();
+            refresh();
         }
-        Connection dbConnection = App.getConnection();
-        Statement stmt = dbConnection.createStatement();
-        stmt.executeUpdate("INSERT INTO Services (id, name, hourlyRate) " +
-                            "VALUES ('" + id + "', '" +
-                            serviceNameIn.getText() + "', " +
-                            "'" + Integer.parseInt(hourlyRateIn.getText()) + "');"
-        );
-        stmt.close();
-        dbConnection.close();
-        refresh();
     }
-    
+        
     @FXML public void deleteService() throws IOException, SQLException {
         Connection dbConnection = App.getConnection();
         Statement stmt = dbConnection.createStatement();
