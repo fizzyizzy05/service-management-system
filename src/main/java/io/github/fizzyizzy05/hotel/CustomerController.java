@@ -57,4 +57,8 @@ public class CustomerController {
     @FXML public void deleteAccount() throws IOException {
         App.setRoot("delete-account");
     }
+
+    @FXML public void newAppointment() throws IOException {
+        App.setRoot("new-appointment");
+    }
 }
