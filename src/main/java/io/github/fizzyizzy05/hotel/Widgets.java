@@ -25,15 +25,17 @@ public class Widgets {
         return widget;
     }
 
-    public static HBox appointmentWidget(int id, String title, String desc, String service, String time, int Customer) {
+    public static HBox appointmentWidget(int id, String title, String desc, String service, String time, int Customer) throws SQLException {
         HBox widget = new HBox();
         Label idLbl = new Label(Integer.toString(id));
         Label nameLbl = new Label(title);
         Label serviceLbl = new Label(service);
+        Label customerLbl = new Label(getCustomer(Customer));
         // Styling
         widget.setPadding(new Insets(5, 10, 5, 10));
         nameLbl.setPadding(new Insets(0, 5, 0, 5));
-        widget.getChildren().addAll(idLbl, nameLbl, serviceLbl);
+        serviceLbl.setPadding(new Insets(0, 5, 0, 0));
+        widget.getChildren().addAll(idLbl, nameLbl, serviceLbl, customerLbl);
         return widget;
     }
 
@@ -64,8 +66,8 @@ public class Widgets {
     public static String getCustomer(int id) throws SQLException {
         Connection dbConnection = App.getConnection();
         Statement stmt = dbConnection.createStatement();
-        ResultSet services = stmt.executeQuery("SELECT name FROM Users WHERE id='" + id + "';");
-        String name = services.getString("name");
+        ResultSet users = stmt.executeQuery("SELECT firstName, lastName FROM Users WHERE id='" + id + "';");
+        String name = users.getString("firstName") + " " + users.getString("lastName");
         stmt.close();
         dbConnection.close();
         return name;
