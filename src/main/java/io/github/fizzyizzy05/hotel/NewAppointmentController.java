@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+@SuppressWarnings("rawtypes")
 public class NewAppointmentController {
     @FXML ChoiceBox serviceBox;
     @FXML TextField titleIn;
