@@ -5,6 +5,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 
 public class Widgets {
+    @SuppressWarnings("exports")
     public static HBox serviceWidget(int id, String name, int hourlyRate) {
         // Content
         HBox widget = new HBox();
